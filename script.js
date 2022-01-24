@@ -8,13 +8,13 @@ window.onload = () => {
       lines[0].classList.remove("active");
       lines[1].classList.remove("unactive");
       lines[2].classList.remove("active");
-      hamburgerBackground.classList.remove("active");
+      hamburgerBackground.classList.remove("open");
       return;
     }
 
     lines[0].classList.add("active");
     lines[1].classList.add("unactive");
     lines[2].classList.add("active");
-    hamburgerBackground.classList.add("active");
+    hamburgerBackground.classList.add("open");
   });
 };

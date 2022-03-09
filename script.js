@@ -33,28 +33,28 @@ window.onload = () => {
   });
 
   // Mouse move animation
-  const leaf = document.querySelector(".leaf");
-  const leafOne = document.querySelector(".leaf-one");
-  const circle = document.querySelector(".circle");
-  const chef = document.querySelector(".image-chef");
-  const fullPage = document.querySelector(".mouse-move");
+  // const leaf = document.querySelector(".leaf");
+  // const leafOne = document.querySelector(".leaf-one");
+  // const circle = document.querySelector(".circle");
+  // const chef = document.querySelector(".image-chef");
+  // const fullPage = document.querySelector(".mouse-move");
 
-  fullPage.addEventListener("mousemove", (event) => {
-    leaf.style.transform = `rotate(180deg) translate3d(
-      ${event.offsetX / 40}px, 
-      ${event.offsetY / 40}px, 
-      0)`;
-    leafOne.style.transform = `rotate(-90deg) translate3d(
-      ${event.offsetX / 40}px, 
-      ${event.offsetY / 40}px, 
-      0)`;
-    circle.style.transform = `rotate(-90deg) translate3d(
-      ${event.offsetX / 35}px, 
-      ${event.offsetY / 35}px, 
-      0)`;
-    chef.style.transform = `translate3d(
-      ${event.offsetX / 140}px, 
-      ${event.offsetY / 140}px, 
-      0)`;
-  });
+  // fullPage.addEventListener("mousemove", (event) => {
+  //   leaf.style.transform = `rotate(180deg) translate3d(
+  //     ${event.offsetX / 40}px,
+  //     ${event.offsetY / 40}px,
+  //     0)`;
+  //   leafOne.style.transform = `rotate(-90deg) translate3d(
+  //     ${event.offsetX / 40}px,
+  //     ${event.offsetY / 40}px,
+  //     0)`;
+  //   circle.style.transform = `rotate(-90deg) translate3d(
+  //     ${event.offsetX / 35}px,
+  //     ${event.offsetY / 35}px,
+  //     0)`;
+  //   chef.style.transform = `translate3d(
+  //     ${event.offsetX / 140}px,
+  //     ${event.offsetY / 140}px,
+  //     0)`;
+  // });
 };

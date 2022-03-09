@@ -8,8 +8,14 @@
       src="https://kit.fontawesome.com/b2771ccf1d.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <title>Restaurant</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="swiper.css" />
   </head>
   <body>
     <nav>
@@ -17,14 +23,13 @@
         <a href="#">Restaurant</a>
       </div>
       <div class="nav-links">
-            <a href="#menu">Menu</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <div class="hamburger">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-          </div>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
       </div>
     </nav>
@@ -36,7 +41,7 @@
           <div class="second-stripe"></div>
           <div class="third-stripe"></div>
         </div>
-        
+
         <div class="start-box">
           <div class="scroll-indicator">
             <ul>
@@ -79,20 +84,20 @@
           <div class="start-reviews"></div>
         </div>
 
-          <div class="hamburger-background">
-            <div class="hamburger-menu">
-              <ul>
-                <li><a href="#">Offer</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-              <div class="social-icons">
-                <i class="fab fa-facebook fa-2x"></i>
-                <i class="fab fa-twitter fa-2x"></i>
-                <i class="fab fa-instagram fa-2x"></i>
-              </div>
+        <div class="hamburger-background">
+          <div class="hamburger-menu">
+            <ul>
+              <li><a href="#">Offer</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="social-icons">
+              <i class="fab fa-facebook fa-2x"></i>
+              <i class="fab fa-twitter fa-2x"></i>
+              <i class="fab fa-instagram fa-2x"></i>
             </div>
           </div>
+        </div>
       </section>
 
       <section id="menu" class="menu-section">
@@ -102,52 +107,29 @@
           <div class="third-stripe"></div>
         </div>
 
+        <div class="menu-wrapper active">
+          <h1 class="menu-title">Our special dishes</h1>
+          <h2 class="menu-subtitle">Made with special ingridients</h2>
 
-        <div class="menu-wrapper">
-          <h1>Our special dishes</h1>
-          <h2>Made with special ingridients</h2>
-
-          <div class="menu-slider">
-            <div class="menu-cards">
-            <div class="menu-card">
-              <img src="/images/plate-three.png" alt="">
-              <h2>Title</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Quos, natus. Eum eaque architecto nemo, consequatur corporis 
-                itaque recusandae voluptate? Necessitatibus nihil fugit amet 
-                esse ea ut maxime ab, dolorum repellat.
-              </p>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <h1 class="item-title">Name of Food</h1>
+                <img
+                  class="item-image"
+                  src="/images/plate-three.png"
+                  alt="Plate With Food"
+                />
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
             </div>
-            <div class="menu-card">
-              <img src="/images/plate-three.png" alt="">
-              <h2>Title</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Quos, natus. Eum eaque architecto nemo, consequatur corporis 
-                itaque recusandae voluptate? Necessitatibus nihil fugit amet 
-                esse ea ut maxime ab, dolorum repellat.
-              </p>
-            </div>
-            <div class="menu-card">
-              <img src="/images/plate-three.png" alt="">
-              <h2>Title</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Quos, natus. Eum eaque architecto nemo, consequatur corporis 
-                itaque recusandae voluptate? Necessitatibus nihil fugit amet 
-                esse ea ut maxime ab, dolorum repellat.
-              </p>
-            </div>
-          </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
-        
-
-
       </section>
 
-      <section id="about" class="about-section">
+      <!-- <section id="about" class="about-section">
         <div class="start-backgound">
           <div class="first-stripe moved"></div>
           <div class="second-stripe moved"></div>
@@ -177,8 +159,9 @@
           </div>
         </div>
 
-      </section>
+      </section> -->
     </div>
     <script src="script.js"></script>
+    <script src="swiper-menu.js"></script>
   </body>
 </html>

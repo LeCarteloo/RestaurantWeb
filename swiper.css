@@ -1,0 +1,21 @@
+* {
+  --primary-color: #84ac3c;
+}
+.swiper {
+  width: calc(100vw - 100px);
+  height: calc(100vh - 150px);
+}
+
+.swiper-slide {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.item-image {
+  width: 700px;
+  height: 700px;
+}
+.item-title {
+  color: var(--primary-color);
+}

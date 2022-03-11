@@ -1,21 +1,46 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap");
 * {
   --primary-color: #84ac3c;
 }
+
 .swiper {
   width: calc(100vw - 100px);
   height: calc(100vh - 150px);
+  cursor: grab;
+}
+
+.swiper:visited {
+  cursor: grabbing;
 }
 
 .swiper-slide {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
 }
 
 .item-image {
-  width: 700px;
-  height: 700px;
+  width: 90%;
+  height: auto;
 }
+
 .item-title {
-  color: var(--primary-color);
+  font-family: Calligraffitti;
+  font-size: 5em;
+  color: white;
+  /* color: var(--primary-color); */
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+}
+
+.swiper-half {
+  width: 50%;
+}
+
+.item-description {
+  color: white;
+  font-size: 18px;
+  width: 70%;
 }

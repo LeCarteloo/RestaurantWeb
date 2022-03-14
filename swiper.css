@@ -21,7 +21,7 @@
 }
 
 .item-image {
-  width: 90%;
+  width: 88%;
   height: auto;
 }
 
@@ -41,6 +41,58 @@
 
 .item-description {
   color: white;
-  font-size: 18px;
-  width: 70%;
+  font-size: 22px;
+  width: 100%;
+  text-align: justify;
+}
+
+#item-btn {
+  margin-top: 25px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn-text {
+  margin-right: 10px;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  opacity: 1;
+  border: var(--primary-color) solid 1px;
+  background-color: transparent;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 980px) {
+  .item-title {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .swiper-slide {
+    flex-direction: column;
+    margin-right: 30px;
+  }
+  .swiper-slide:last-child {
+    margin-right: 0px;
+  }
+  .swiper-half {
+    width: 100%;
+  }
+  .item-title {
+    font-size: 50px;
+  }
+  .item-description {
+    font-size: 20px;
+  }
 }

@@ -9,6 +9,7 @@ console.log(swiperElem);
 
 const swiper = new Swiper(".swiper", {
   loop: true,
+  slidesPerView: "auto",
   //   mousewheel: true,
   pagination: {
     el: ".swiper-pagination",

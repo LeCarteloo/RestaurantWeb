@@ -3,6 +3,7 @@ html,
 body {
   overflow: scroll;
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -144,7 +145,6 @@ a {
   width: 100%;
   height: 100%;
   /* overflow: hidden; */
-  scroll-snap-type: y mandatory;
 }
 
 section {
@@ -556,6 +556,7 @@ section {
 .about-title {
   color: white;
   font-size: 40px;
+  z-index: 1;
 }
 
 .about-text h1 {
@@ -624,6 +625,18 @@ section {
   .about-text {
     width: 100%;
   }
+  .about-wrapper {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 756px) {
+  .about-text h1 {
+    font-size: 25px;
+  }
+  .about-text p {
+    font-size: 18px;
+  }
 }
 
 /* Contact section */
@@ -665,10 +678,10 @@ section {
 }
 
 .contact-form input[type="text"] {
-  width: 100%;
+  width: 95%;
 }
 .contact-form textarea {
-  width: 100%;
+  width: 95%;
 }
 
 .contact-form input[type="text"],
@@ -709,12 +722,12 @@ section {
 
 .contact-info {
   flex-direction: column;
-  justify-content: space-evenly;
 }
 
 .info-item {
   display: flex;
   width: 280px;
+  margin: 60px;
 }
 
 .info-item i {
@@ -732,6 +745,34 @@ section {
 .info-item-text span {
   display: block;
 }
+
+@media (max-width: 830px) {
+  .contact-content {
+    flex-direction: column;
+  }
+  .contact-info {
+    /* display: none; */
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .info-item {
+    margin: 0;
+  }
+  .info-item-text {
+    font-size: 16px;
+  }
+  .contact-form {
+    width: 100%;
+  }
+  .contact-wrapper {
+    /* top right bottom left */
+    padding: 0 50px 0 50px;
+  }
+}
+
+/* Footer */
 
 /* footer {
   height: 30vh;

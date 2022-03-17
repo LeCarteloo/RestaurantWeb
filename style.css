@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap");
-html,
-body {
+html {
   overflow: scroll;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+}
+
+.full-page {
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -33,9 +35,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  top: 0;
   z-index: 11;
-  /* backdrop-filter: blur(10px); */
+  backdrop-filter: blur(10px);
   /* background-color: red; */
 }
 
@@ -62,8 +65,9 @@ a {
 }
 
 .hamburger {
-  width: 60px;
+  width: 30px;
   height: 20px;
+  padding: 8px;
 
   display: inline-flex;
   flex-direction: column;
@@ -71,11 +75,13 @@ a {
   align-items: center;
   cursor: pointer;
 
+  background-color: #0a1824;
+
   z-index: 11;
 }
 
 .line {
-  width: 50%;
+  width: 80%;
   height: 2px;
   background-color: var(--primary-color);
   transition: 0.5s;
@@ -150,7 +156,6 @@ a {
 section {
   width: 100vw;
   height: 100vh;
-  scroll-snap-align: start;
 }
 
 /* Start section */
@@ -160,6 +165,7 @@ section {
 
 /* TODO: Needs tweak */
 .start-background {
+  overflow: hidden;
   min-width: 100%;
 }
 
@@ -439,7 +445,7 @@ section {
   .start-text {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     margin-left: 100px;
     width: 100%;
@@ -504,8 +510,6 @@ section {
 
 /* About section */
 .about-section {
-  width: 100vw;
-  height: 100vh;
   position: relative;
   background-color: var(--blue1-color);
   display: flex;
@@ -614,7 +618,7 @@ section {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  z-index: 999;
+  z-index: 9;
   pointer-events: auto;
 }
 

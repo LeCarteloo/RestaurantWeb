@@ -1,16 +1,5 @@
 window.onload = () => {
-  //
-  const viewport = document.querySelector("meta[name=viewport]");
-  viewport.setAttribute(
-    "content",
-    viewport.content + ", height=" + window.innerHeight
-  );
-  // Navbar hamburger
-  const hamburger = document.querySelector(".hamburger");
-  const lines = document.querySelectorAll(".line");
-  const hamburgerBackground = document.querySelector(".hamburger-background");
-
-  hamburger.addEventListener("click", () => {
+  const handleHamburger = (lines) => {
     if (lines[0].classList.contains("active")) {
       lines[0].classList.remove("active");
       lines[1].classList.remove("unactive");
@@ -23,6 +12,30 @@ window.onload = () => {
     lines[1].classList.add("unactive");
     lines[2].classList.add("active");
     hamburgerBackground.classList.add("open");
+  };
+
+  // Fixing viewport after using keyboard on android browser
+  const viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute(
+    "content",
+    viewport.content + ", height=" + window.innerHeight
+  );
+
+  // Navbar hamburger
+  const hamburger = document.querySelector(".hamburger");
+  const lines = document.querySelectorAll(".line");
+  const hamburgerBackground = document.querySelector(".hamburger-background");
+
+  hamburger.addEventListener("click", () => {
+    handleHamburger(lines);
+  });
+
+  const navLinks = document.querySelectorAll(".hamburger-menu a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      handleHamburger(lines);
+    });
   });
 
   // Scroll animation

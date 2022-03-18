@@ -1,4 +1,10 @@
 window.onload = () => {
+  //
+  const viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute(
+    "content",
+    viewport.content + ", height=" + window.innerHeight
+  );
   // Navbar hamburger
   const hamburger = document.querySelector(".hamburger");
   const lines = document.querySelectorAll(".line");

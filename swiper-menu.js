@@ -11,8 +11,6 @@ const swiper = new Swiper(".swiper", {
   pagination: {
     el: ".swiper-pagination",
   },
-
-  // And if we need scrollbar
   scrollbar: {
     el: ".swiper-scrollbar",
   },

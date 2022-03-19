@@ -39,16 +39,24 @@ window.onload = () => {
   });
 
   // Scroll animation
-  window.addEventListener("scroll", () => {
-    const menuWrapper = document.querySelector(".menu-wrapper");
-    const scrollPos = menuWrapper.getBoundingClientRect().top;
+
+  const addScrollAnim = (styleClass) => {
+    const elementWrapper = document.querySelector(styleClass);
+    const scrollPos = elementWrapper.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
-    const showPoint = 150;
+    const showPoint = 200;
+
     if (scrollPos < windowHeight - showPoint) {
-      menuWrapper.classList.add("active");
+      elementWrapper.classList.add("active");
     } else {
-      menuWrapper.classList.remove("active");
+      elementWrapper.classList.remove("active");
     }
+  };
+
+  window.addEventListener("scroll", () => {
+    addScrollAnim(".menu-wrapper");
+    addScrollAnim(".about-wrapper");
+    addScrollAnim(".contact-wrapper");
   });
 
   // Mouse move animation

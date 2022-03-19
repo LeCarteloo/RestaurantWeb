@@ -9,6 +9,15 @@ html {
   overflow: hidden;
 }
 
+/* .full-page {
+  scroll-snap-type: y mandatory;
+  overflow-y: visible;
+}
+
+section {
+  scroll-snap-align: start;
+} */
+
 ::-webkit-scrollbar {
   width: 0;
   background: transparent;
@@ -38,8 +47,18 @@ nav {
   position: fixed;
   top: 0;
   z-index: 11;
-  backdrop-filter: blur(10px);
-  /* background-color: red; */
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  nav {
+    backdrop-filter: blur(10px);
+  }
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  nav {
+    background-color: #1c2c44d2;
+  }
 }
 
 a {
@@ -56,7 +75,7 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  margin-right: 30px;
+  margin-right: 50px;
 }
 
 .nav-links a {
@@ -124,6 +143,7 @@ nav .nav-underline {
 
   background-color: #0a1824;
 
+  display: none;
   z-index: 11;
 }
 
@@ -201,11 +221,10 @@ nav .nav-underline {
 .full-page {
   width: 100%;
   height: 100%;
-  /* overflow: hidden; */
 }
 
 section {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -217,7 +236,6 @@ section {
 /* TODO: Needs tweak */
 .home-background {
   overflow: hidden;
-  min-width: 100%;
 }
 
 .first-stripe {
@@ -486,6 +504,9 @@ section {
   .nav-links a {
     display: none;
   }
+  .hamburger {
+    display: flex;
+  }
   .nav-underline {
     display: none;
   }
@@ -572,6 +593,12 @@ section {
   }
 }
 
+@media (max-device-width: 640px) {
+  .home-section {
+    height: 92vh;
+  }
+}
+
 /* About section */
 .about-section {
   position: relative;
@@ -594,6 +621,15 @@ section {
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
+
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.about-wrapper.active {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .about-content {
@@ -713,10 +749,20 @@ section {
 }
 
 .contact-wrapper {
+  position: absolute;
+  width: 100%;
   padding-right: 40px;
   padding-left: 100px;
   display: flex;
   flex-direction: column;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.8s;
+}
+
+.contact-wrapper.active {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .contact-title {
@@ -814,7 +860,7 @@ section {
   display: block;
 }
 
-@media (max-width: 830px) {
+@media (max-width: 980px) {
   .contact-content {
     flex-direction: column;
   }
@@ -843,6 +889,11 @@ section {
   }
 }
 
+@media (max-width: 756px) {
+  .contact-wrapper {
+    width: auto;
+  }
+}
 /* Footer */
 
 /* footer {

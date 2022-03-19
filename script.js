@@ -30,9 +30,9 @@ window.onload = () => {
     handleHamburger(lines);
   });
 
-  const navLinks = document.querySelectorAll(".hamburger-menu a");
+  const hamburgerLink = document.querySelectorAll(".hamburger-menu a");
 
-  navLinks.forEach((link) => {
+  hamburgerLink.forEach((link) => {
     link.addEventListener("click", () => {
       handleHamburger(lines);
     });
@@ -75,5 +75,65 @@ window.onload = () => {
       ${event.offsetX / 140}px,
       ${event.offsetY / 140}px,
       0)`;
+  });
+
+  // Section-aware navigation with Intersection Observer API
+  // Could be done with scroll event but Observer make it more efficient
+  const navLinks = {
+    nav_menu: document.getElementById("nav-menu"),
+    nav_about: document.getElementById("nav-about"),
+    nav_contact: document.getElementById("nav-contact"),
+  };
+
+  const sections = {
+    home: document.getElementById("home"),
+    menu: document.getElementById("menu"),
+    about: document.getElementById("about"),
+    contact: document.getElementById("contact"),
+  };
+
+  const hambLinks = {
+    hamb_home: document.getElementById("hamb-home"),
+    hamb_menu: document.getElementById("hamb-menu"),
+    hamb_about: document.getElementById("hamb-about"),
+    hamb_contact: document.getElementById("hamb-contact"),
+  };
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.7,
+  };
+
+  const observerCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const navLink = navLinks[`nav_${entry.target.id}`];
+        const hambLink = hambLinks[`hamb_${entry.target.id}`];
+
+        hambLink.classList.add("active");
+
+        if (entry.target.id !== "home") {
+          navLink.classList.add("active");
+        }
+
+        Object.values(navLinks).forEach((link) => {
+          if (link != navLink) {
+            link.classList.remove("active");
+          }
+        });
+
+        Object.values(hambLinks).forEach((link) => {
+          if (link != hambLink) {
+            link.classList.remove("active");
+          }
+        });
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  Object.values(sections).forEach((section) => {
+    observer.observe(section);
   });
 };
